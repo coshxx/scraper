@@ -85,9 +85,9 @@ for j in range(341, len(results)-1):
     items[j].append(item_effects)
     items[j].append(item_url)
 
-
-print "Removing existing DB"
-os.remove(outfile)
+if os.path.isfile(outfile):
+    print "Removing existing DB"
+    os.remove(outfile)
 
 print "Dumping to " + outfile
 fout = open(outfile, "a")
